@@ -6,7 +6,7 @@
 
 function insererUtilisateur($email, $motDePasse, $nom, $prenom, $telephone)
 {
-    if (checkIfUserExist($email) != null) {
+    if (checkIfUserExist($email) == null) {
         try {
             $pdo = connectBdd();
 

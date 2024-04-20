@@ -1,7 +1,7 @@
 <?php
 session_start(); // Assurez-vous que cette ligne est au début du fichier, avant tout envoi de contenu
 
-include("fonction.php");
+include("../fonction.php");
 
 // Vérification de l'existence de données POST
 $msgErrors = "";
@@ -37,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('Location: ../page/inscription.php?msg=subscribe_success'); // REDIRECTION
             exit();
         }
-        echo "feoefok";
         $_SESSION['errors_subscribe'] = "email already exist";
         header('Location: ../page/inscription.php?msg=subscribe_error');
         exit();
