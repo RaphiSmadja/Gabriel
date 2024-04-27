@@ -1,10 +1,6 @@
 <?php
 session_start();
 
-if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) {
-	include("aside-admin.php");
-}
-
 echo '
 <div class= "header">
 	<a href="../index.php">
@@ -24,5 +20,7 @@ echo '
 		</ul>
 	</nav>
 </div>';
-
+if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) {
+	include("aside-admin.php");
+}
 ?>

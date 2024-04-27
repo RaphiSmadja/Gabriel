@@ -8,6 +8,8 @@ body{
 
 .header{
 	background-color: #F4E4C6;
+    z-index: 1000;
+    position: sticky;   
 	height: 190px;
 	margin: 0px;
 	display: flex;
@@ -811,6 +813,7 @@ form {
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 999;
     width: 240px;
     height: 100%;
     background-color: #333;
@@ -820,6 +823,7 @@ form {
   }
   
   .admin-profile {
+    margin-top: 300px;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -877,4 +881,48 @@ form {
     color: #f5eb3b; /* Couleur des étoiles survolées ou sélectionnées */
   }
   
-  
+  /*
+
+  */
+
+  .film-container {
+    display: inline-block;
+    width: 1080px;
+    flex-direction: column;
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.film-affiche {
+    background-color: #ddd;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.film-detail {
+    margin-bottom: 10px;
+}
+
+.film-detail h3, .film-detail h4 {
+    margin: 5px 0;
+    color: #333;
+}
+
+.film-detail p {
+    color: #666;
+}
+
+.film-salle {
+    display: flex;
+    justify-content: space-around;
+}
+
+.film-seance {
+    background-color: #eee;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+}
