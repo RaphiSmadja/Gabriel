@@ -80,15 +80,7 @@ function getAllFilms()
     try {
         $pdo = connectBdd();
         // La requête SQL
-        $sql = "SELECT f.titre, f.description, f.datedesortie,f.duree,f.image,f.video,f.note,
-        s.horraire, s.version,
-        sa.nom as salle_nom,
-        c.type as categories
-        FROM film f
-        JOIN seance s ON s.idfilm = f.id
-        JOIN salle sa ON s.id = sa.idseance
-        JOIN categorie c ON c.idfilm = f.id 
-        ORDER BY f.titre, s.horraire;";
+        $sql = "SELECT * FROM film f join seance s on f.id = s.idfilm join salle sa on sa.id = s.idsalle";
 
         // Exécution de la requête
         $stmt = $pdo->query($sql);
