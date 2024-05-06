@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `seance` (
   `id` int NOT NULL,
   `idfilm` int NOT NULL,
   `idsalle` int NOT NULL,
-  `horraire` time NOT NULL,
+  `horaire` time NOT NULL,
   `date` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 

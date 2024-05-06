@@ -97,3 +97,51 @@ function getAllFilms()
         return null; // Retourne false en cas d'erreur
     }
 }
+
+function getOnlyFilms()
+{
+    try {
+        $pdo = connectBdd();
+        // La requête SQL
+        $sql = "SELECT * FROM film";
+
+        // Exécution de la requête
+        $stmt = $pdo->query($sql);
+        $results = [];
+        if ($stmt) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $results[] = $row;
+            }
+        }
+        return $results;
+    } catch (PDOException $e) {
+        // En cas d'erreur, afficher l'erreur
+        echo "Erreur dans la base de données : " . $e->getMessage();
+        return null; // Retourne false en cas d'erreur
+    }
+}
+
+/*
+    PAGE DETAILS FILM
+*/
+
+function getAllSeanceByFilm($idFilm)
+{
+    try {
+        $pdo = connectBdd();
+        // La requête SQL
+        $sql = "SELECT * FROM seance s join film f on s.idfilm = f.id WHERE idfilm=$idFilm order by date";
+        // Exécution de la requête
+        $stmt = $pdo->query($sql);
+        $results = [];
+        if ($stmt) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $results[] = $row;
+            }
+        }
+        return $results;
+    } catch (Exception $e) {
+        echo "Erreur" . $e->getMessage();
+        return null;
+    }
+}
