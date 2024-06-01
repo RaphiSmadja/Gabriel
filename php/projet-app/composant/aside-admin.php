@@ -13,7 +13,7 @@ echo'<aside id="admin-sidebar">
       <li><a href="../page/ajoutfilm.php">Ajouter un nouveau film</a></li>
       <li><a href="../page/ajoutsalle.php">Ajouter une nouvelle salle</a></li>
       <li><a href="../page/ajoutseance.php">Ajouter une seance</a></li>
-      <li><a href="#">Utilisateurs</a></li>
+      <li><a href="../page/utilisateurs.php"">Utilisateurs</a></li>
       <li><a href="#">Commentaires</a></li>
       <li><a href="#">Paramètres</a></li>
     </ul>

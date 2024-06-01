@@ -147,3 +147,36 @@ function getAllSalles()
         return null; // Retourne false en cas d'erreur
     }
 }
+
+function getAllUsers()
+{
+    try {
+        $pdo = connectBdd();
+
+        $sth = $pdo->prepare("SELECT id, prenom, nom, email, telephone, role, datedecreation FROM utilisateur");
+        $sth->execute();
+        $result = $sth->fetchAll();
+
+        return $result;
+    } catch (PDOException $e) {
+        echo "Erreur dans la base de données : " . $e->getMessage();
+        return null; // Retourne false en cas d'erreur
+    }
+}
+
+
+function deleteUser($id)
+{
+    try {
+        $pdo = connectBdd();
+        $sth = $pdo->prepare("DELETE FROM utilisateur WHERE id=:id");
+        $sth->bindParam(':id', $id, PDO::PARAM_INT);
+        if ($sth->execute()) {
+            echo "Record deleted successfully";
+        } else {
+            echo "Error deleting record: " . $sth->errorInfo()[2];
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
